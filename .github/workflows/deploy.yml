@@ -10,10 +10,14 @@ jobs:
     steps:
       - name: Output Event Data
         run: echo "${{ toJSON(github.event) }}"
-      - name: Get Code
+      - name: Get the code
         uses: actions/checkout@v4
-      - name: Install Dependencies
-        uses: npm cli
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependenices
+        run: npm ci
       - name: Test Code
         uses: npm run test
       - name: Build Code
