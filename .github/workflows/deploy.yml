@@ -15,7 +15,7 @@ jobs:
       - name: Install Dependencies
         uses: npm cli
       - name: Test Code
-        uses: npm run test
+        uses: npm run deploy
       - name: Build Code
         uses: npm run build
       - name: Deploy Project
