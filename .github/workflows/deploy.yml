@@ -4,19 +4,19 @@ on:
     types: 
       - opened
   workflow_dispatch:
-  jobs:
-    deploy:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Output Event Data
-          run: echo "${{ toJSON(github.event) }}"
-        - name: Get Code
-          uses: actions/checkout@v4
-        - name: Install Dependencies
-          uses: npm cli
-        - name: Test Code
-          uses: npm run test
-        - name: Build Code
-          uses: npm run build
-        - name: Deploy Project
-          uses: echo "Deploying.."
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output Event Data
+        run: echo "${{ toJSON(github.event) }}"
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Install Dependencies
+        uses: npm cli
+      - name: Test Code
+        uses: npm run test
+      - name: Build Code
+        uses: npm run build
+      - name: Deploy Project
+        uses: echo "Deploying.."
